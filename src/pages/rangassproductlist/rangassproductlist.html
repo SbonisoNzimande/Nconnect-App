@@ -1,0 +1,39 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- Store info -->
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">{{category_name}}</h2>
+	</div>
+	<!-- END ->Store info -->
+	<ul class="collection stores" *ngFor="let p of products;">
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-5 noscaned-list waves-effect waves-light" >
+			<div class="notify-header">
+				<div class="notify-author">
+					<span class="black-text">{{p.product_name}}</span>
+				</div>
+				<span class="avatar-left"><i class="ion-ios-information-outline primary-text"></i></span>
+			</div>
+		</li>
+	</ul>
+</ion-content>
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="closeModal();"><span class="white-text center-align">Close</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->

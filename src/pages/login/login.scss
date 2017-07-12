@@ -1,0 +1,15 @@
+page-login {
+	.login-form h1{
+		color:#00b6e2;
+	}
+
+	.button-md {
+	  box-shadow: none!important;
+	}
+
+	button:disabled,
+	button[disabled]{
+	  background-color: #f8bbd0 !important;
+	  color: #64b5f6;
+	}
+}

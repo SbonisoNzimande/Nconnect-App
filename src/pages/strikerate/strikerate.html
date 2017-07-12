@@ -1,0 +1,106 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">Promotion Strike Rate</h2>
+	</div>
+	<!-- END ->Store info -->
+
+	<button *ngIf="promo_name" class="submit-btn button-full-width checkin-color block check-buttons newbutton-color" (click)="show_promotions();"><span class="white-text center-align" >{{promo_name}}</span></button>
+	<button *ngIf="!promo_name" class="submit-btn button-full-width checkin-color block  check-buttons newbutton-color" (click)="show_promotions();"><span class="white-text center-align" >Click Here to Select a Promotion</span></button>
+
+	<div class="section-form">
+		<form novalidate #form="ngForm" (ngSubmit)="SubmitForm(form)" #strikeForm="ngForm">
+			<div class="center list-item" radio-group >
+				<p class="center form-label">Have you placed any bins?</p>
+				<!-- <span class="radio-inline">
+					<ion-radio class="with-gap" name="bin_placed"  value="yes" icon="icon-check-circle positive"></ion-radio>
+					<ion-label>Yes</ion-label>
+				</span>
+				<span class="radio-inline right-radio">
+					<ion-radio class="with-gap" name="bin_placed" value="no" icon="icon-check-circle positive"></ion-radio>
+					<ion-label>No</ion-label>
+				</span> -->
+				<p class="radio-inline right-radio">
+					<input name="bin_placed" type="radio" id="yes" [(ngModel)]="bin_placed" value="yes" class="radio radio-inline radio-blue"/>
+					<label for="yes">Yes</label>
+				</p>
+
+				<p class="radio-inline right-radio">
+					<input name="bin_placed" type="radio" id="no" [(ngModel)]="bin_placed" value="no" class="radio radio-inline radio-blue"/>
+					<label for="no">No</label>
+				</p>
+			</div>
+
+			          
+
+			<!-- If Yes -->
+			<div class="center list-item animated fadeinright delay-1" *ngIf="bin_placed === 'yes'">
+				<p class="center form-label">How many bins did you place?</p>
+				<div class="input-field">
+					<input id="bins" type="tel" class="validate center-align-text" [(ngModel)]="number_bins"  name="bins" [disabled]="bin_placed === 'no'">
+					<!-- <label for="bins" class="">How many bins did you place?</label> -->
+				</div>
+
+				<p class="center form-label">How many gondolas did you place?</p>
+				<div class="input-field">
+					<input id="bins" type="tel" class="validate center-align-text" [(ngModel)]="number_godnola" name="godnola" [disabled]="bin_placed === 'no'">
+					<!-- <label for="bins" class="">How many bins did you place?</label> -->
+				</div>
+			</div>
+			<!-- End -> If Yes -->
+
+			<!-- If No -->
+			<div class="center list-item animated fadeinright delay-1" *ngIf="bin_placed === 'no'" (click)="show_reasons();">
+				<p class="center form-label">Reason?</p>
+				<div class="input-field reson">
+					<input id="reason" type="tel" class="validate center-align-text" [(ngModel)]="reason" name="reason" disabled="yes" [value]="reasonLabel">
+				</div>
+			</div>
+			<!-- End -> If No -->
+
+			
+		</form>
+
+		<!-- <ion-card *ngFor="let image of image_list;">
+			<ion-card-header>
+			
+				<div class="img-preview" >
+					<img alt="" [src]="image.src">
+				</div>
+			</ion-card-header>
+		</ion-card> -->
+
+		<button ion-button (click)="chooseImage();" class="btn-large check-buttons take-photo animated fadeinright" block *ngIf="bin_placed === 'yes'">
+			<span class="white-text top">Take a Photo({{img_count}})</span>
+			<span class="bottom">(You can take multiple)</span>
+		</button>
+
+
+		<button ion-button (click)="uploadPhoto();" class="btn-large check-buttons save-strike" block [disabled]="!bin_placed || !promo_id">
+			<span class="white-text">Save</span>
+		</button>
+	</div>
+
+	
+</ion-content>
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->

@@ -1,0 +1,45 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- START -> Refresh -->
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+			pullingIcon="arrow-dropdown"
+			pullingText="Pull to refresh"
+			refreshingSpinner="circles"
+			refreshingText="Refreshing...">
+		</ion-refresher-content>
+	</ion-refresher>
+	<!-- END -> Refresh -->
+	<div class="store-cards">
+		<div class="card animated bouncein" *ngFor="let store of week_stores;" (click)="gotostorecall(store.store_id, store.store_name);">
+			<div class="card-content">
+				<span class="card-title">{{store.store_name}}</span>
+				<p>
+					<strong>Account Number: </strong>{{store.store_id}}
+					<br />
+					<strong>Address: </strong>{{store.store_name}}
+				</p>
+			</div>
+		</div>
+
+	</div>
+	
+</ion-content>
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button  -->

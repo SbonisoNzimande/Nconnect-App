@@ -1,0 +1,42 @@
+page-surveyform {
+	h5{
+		line-height: 0rem;
+		margin-bottom: 1rem;
+	}
+
+	 h4.header{
+		font-size: 1.2em;
+		padding-left: 20px;
+		font-weight: bold;
+		margin-top: 5px; 
+	}
+
+	.list-item{
+		margin-bottom: 20px;
+	}
+
+	.form-label, .radio-inline{
+		font-size: 1.2em;
+	}
+
+	.input-field{
+		/*width: 20%;*/
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.radio-inline .right-radio{
+		padding-left:10px;
+	}
+
+	.form-label, .radio-inline{
+		font-size: 1.2em;
+	}
+
+	.select{
+		width: 50%;
+		text-align-last:center;
+	}
+
+	
+}

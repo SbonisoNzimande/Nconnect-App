@@ -1,0 +1,7 @@
+{
+  "globalDependencies": {
+    "cordova": "registry:dt/cordova#0.0.0+20160819210047",
+    "cordova/plugins/filesystem": "registry:dt/cordova/plugins/filesystem#0.0.0+20160823215534",
+    "jquery": "registry:dt/jquery#1.10.0+20170310222111"
+  }
+}

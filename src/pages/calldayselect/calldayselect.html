@@ -1,0 +1,44 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+<ion-content>
+	<!-- Day List -->
+	<div class="days-list">
+		<div class="days-list-iterm center animated bouncein delay-1" (click)="gotocalls('Monday');">
+			<h1 class="heading">Monday</h1>
+		</div>
+
+		<div class="days-list-iterm center animated bouncein delay-2"  (click)="gotocalls('Tuesday');">
+			<h1 class="heading">Tuesday</h1>
+		</div>
+
+		<div class="days-list-iterm center animated bouncein delay-3" (click)="gotocalls('Wednesday');">
+			<h1 class="heading">Wednesday</h1>
+		</div>
+
+		<div class="days-list-iterm center animated bouncein delay-4" (click)="gotocalls('Thursday');">
+			<h1 class="heading">Thursday</h1>
+		</div>
+
+		<div class="days-list-iterm center animated bouncein delay-5" (click)="gotocalls('Friday');">
+			<h1 class="heading">Friday</h1>
+		</div>
+	</div>
+	<!-- END -> Day List -->
+	
+
+
+</ion-content>
+
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>

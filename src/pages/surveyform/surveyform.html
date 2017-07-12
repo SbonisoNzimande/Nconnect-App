@@ -1,0 +1,101 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">{{survey_type}}</h2>
+		<h2 class="heading primary-text">{{survey_title}}</h2>
+	</div>
+	<!-- END ->Store info -->
+
+	<div class="section-form">
+		<form novalidate  #surveyForm="ngForm" (ngSubmit)="SubmitForm(surveyForm.value)">
+			<div class="center list-item animated fadeinright delay-1"  *ngFor="let question of question_list;">
+				<p class="center form-label">{{question.q_num +'. '+ question.q_text}}</p>
+
+				<div class="input-field radio-inline" *ngFor="let option of question.q_options; let i = index" [attr.data-index]="i">
+					<!-- radio -->
+					<input name="{{'question'+question.q_num}}" type="radio" id="{{'question'+i+'_'+ question.q_num}}" [(ngModel)]="this['question' + i +'_'+question.q_num]" *ngIf="question.q_type == 'radio'" value="{{option}}" class="radio radio-inline radio-blue"/>
+					<label for="{{'question'+i+'_'+ question.q_num}}" *ngIf="question.q_type == 'radio'" >{{option}}</label>
+					<!-- checkbox -->
+					<input name="{{'question'+question.q_num+'['+option+']'}}" type="checkbox" id="{{'question'+i+'_'+ question.q_num}}" [(ngModel)]="this['question' + i +'_'+question.q_num+'[]']" *ngIf="question.q_type == 'checkbox'" value="{{option}}" class="radio radio-inline radio-blue"/>
+					<label for="{{'question'+i+'_'+ question.q_num}}" *ngIf="question.q_type == 'checkbox'" >{{option}}</label>
+
+					<!-- text box -->
+					<input name="{{'question'+question.q_num}}" type="text" id="{{'question'+i+'_'+ question.q_num}}" class="validate center-align-text" [(ngModel)]="this['question' + i +'_'+question.q_num]" *ngIf="question.q_type == 'free_text'" placeholder="{{option}}"/>
+
+					<!-- number text box -->
+					<input name="{{'question'+question.q_num}}" type="tel" id="{{'question'+i+'_'+ question.q_num}}"  class="validate center-align-text" [(ngModel)]="this['question' + i +'_'+question.q_num]" *ngIf="question.q_type == 'number_text'" placeholder="{{option}}" />
+
+					<!-- File upload -->
+					<!-- <div class="file-field input-field" *ngIf="question.q_type == 'file_upload'"  >
+						<div class="btn">
+							<span>File</span>
+							<input type="file" [(ngModel)]="this['question' + i +'_'+question.q_num]" name="{{'question'+question.q_num}}" >
+						</div>
+
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="{{option}}"  id="{{'question'+i+'_'+ question.q_num}}" >
+						</div>
+
+						<input type="hidden" name="">
+					</div> -->
+
+					<button ion-button (click)="chooseImage('question_'+question.q_num, $event);" class="btn-large check-buttons take-photo animated fadeinright" block *ngIf="question.q_type == 'file_upload'">
+						<span class="white-text top">{{option}}</span>
+						<input class="file-path validate" type="text" name="{{'question'+question.q_num}}"  [(ngModel)]="this['question_'+question.q_num]" id="{{'question_'+ question.q_num}}" >
+					</button>
+
+					
+
+					<!-- select -->
+
+
+					<!-- <label for="{{'question'+i+'_'+ question.q_num}}" *ngIf="question.q_type == 'radio'" >{{option}}</label> -->
+				</div>
+				<!-- select -->
+				<!-- <ion-col width-50 *ngIf="question.q_type == 'select'">
+					<ion-label>{{option}}</ion-label>
+					<ion-select [(ngModel)]="this['question' + i +'_'+question.q_num]" name="{{'question'+question.q_num}}" class="validate center-align-text"  placeholder="{{option}}">
+						<ion-option *ngFor="let option of question.q_options; let i = index" [attr.data-index]="i" [value] = "option" >{{option}}</ion-option>
+					</ion-select>
+				</ion-col> -->
+
+				<!-- select -->
+				<div align="center" *ngIf="question.q_type == 'select'">
+					<select name="{{'question'+question.q_num}}" class="browser-default select" [(ngModel)]="this['question' + i +'_'+question.q_num]" name="{{'question'+question.q_num}}">
+						<option *ngFor="let option of question.q_options; let i = index" [attr.data-index]="i" [value] = "option" >{{option}}</option>
+					</select>
+				</div>
+				<!-- /select -->
+				
+			</div>
+			<button ion-button type="submit" class="btn-large check-buttons save-strike" block [disabled]="!surveyForm.valid">
+				<span class="white-text">Submit</span>
+			</button>
+
+		</form>
+	</div>
+	
+	
+
+</ion-content>
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->
+

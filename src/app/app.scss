@@ -14,3 +14,47 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.button-full-width {
+    display: block !important;
+    width: 100% !important;
+}
+
+.bottom2 {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.form-container{
+	width: 100%;
+}
+/*bottom: 0;*/
+	/*left: 0;*/
+	/*right: 0;*/
+
+.news-title{
+	position: relative;
+	  -webkit-transform: translateY(-50%);
+	  -ms-transform: translateY(-50%);
+	  transform: translateY(-50%);
+}
+
+select:focus {
+    outline: none;
+}
+button:focus {
+    outline: none!important;
+    background-color: transparent!important;
+}
+
+.radio-inline {
+	position:relative;
+	display:inline-block;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.center-align-text{
+	text-align: center;
+}

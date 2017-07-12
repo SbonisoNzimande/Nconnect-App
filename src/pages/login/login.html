@@ -1,0 +1,39 @@
+<div id="main" class="main">
+
+	<!-- Toolbar -->
+	<div id="toolbar" class="pink-color tool-login">
+		<!-- <div class="open-left" id="open-left" data-activates="slide-out-left">
+			<i class="ion-android-menu white-text"></i>
+		</div> -->
+	</div>
+	<!-- End of Toolbar -->
+
+	<!-- Page Contents -->
+	<div class="page fullscreen grey lighten-4">
+		<form (ngSubmit)="login()" #registerForm="ngForm">
+			<div class="login-form z-depth-1">
+				<h1>nConnect</h1>
+				<div class="input-field">
+					<i class="ion-android-contact prefix"></i> 
+					<input type="tel" name="rep_id" id="rep_id" [(ngModel)]="registerCredentials.rep_id" required> 
+					<label for="rep_id">Rep ID</label>
+				</div>
+
+				<div class="input-field" style="margin-bottom:20px;">
+					<i class="ion-android-lock prefix"></i> 
+					<input type="password" name="password"  id="login-psw" [(ngModel)]="registerCredentials.password" required> 
+					<label for="login-psw">Password</label>
+				</div>
+
+				<button ion-button class="submit-btn waves-effect waves-light btn-large pink-color block  animated bouncein delay-2" full type="submit" [disabled]="!registerForm.form.valid">Sign In</button>
+			</div>
+		</form>
+
+	</div> 
+	<!-- End of Page Contents -->
+
+	
+
+
+
+</div>

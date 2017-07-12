@@ -1,0 +1,46 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+<ion-content>
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">{{category_name}}</h2>
+	</div>
+	<!-- END ->Store info -->
+
+	
+
+	<div class="section-form">
+		<div class="leavespance"></div>
+		
+
+
+
+
+	</div>
+	
+</ion-content>
+
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn button-full-width checkin-color block  check-buttons newbutton-color" (click)="view_products();"><span class="white-text center-align" >View Product List</span></button>
+	<button ion-button (click)="chooseImage();" class="btn-large check-buttons take-photo animated fadeinright" block>
+		<span class="white-text top">Start Scanning to Compare</span>
+		<span class="bottom">(You can scan multiple)</span>
+	</button>
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->
+

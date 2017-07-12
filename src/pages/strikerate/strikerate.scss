@@ -1,0 +1,123 @@
+page-strikerate {
+	.check-buttons{
+		height: 70px;
+		text-transform: none;
+		font-size: 1.4em;
+		margin-bottom: 5px;
+		/*font-weight: lighter;*/
+	}
+
+	.newbutton-color{
+		background-color: #44DB5E;
+	}
+
+	h5{
+		line-height: 0rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-form{
+		padding: 10px 0px;
+	}
+
+	.list-item{
+		margin-bottom: 20px;
+	}
+
+	.radio-inline .right-radio{
+		padding-left:10px;
+	}
+
+	.form-label, .radio-inline{
+		font-size: 1.2em;
+	}
+
+	.input-field label.active {
+		font-size: 1.6rem;
+
+	}
+
+	.take-photo{
+		background-color: #0F485A;
+		color: #FFFFFF;
+		font-weight: lighter;
+	}
+
+	.take-photo .bottom {
+		color: #54C7FC;
+		font-size: .8em;
+		display: block;
+	}
+
+	.take-photo .top {
+		color: #ffffff;
+		margin-bottom: 20px;
+		display: block;
+	}
+
+	.save-strike{
+		background-color: #009688;
+		color: #FFFFFF;
+		font-weight: lighter;
+	}
+
+	.check-buttons{
+		font-weight: lighter;
+	}
+
+	.input-field{
+		width: 20%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	ion-label{
+		display: inline-block;
+	}
+
+	.label-md {
+	    /*margin: 13px 8px 13px 0;*/
+	}
+
+	.item-cover {
+	    position: relative!important;
+	    top: initial!important; 
+	    left: initial!important;
+	}
+
+
+	ion-card{
+		margin: 3px !important;
+		width: calc(100% - 6px) !important;
+		.uploadWrap{
+			ion-icon{
+				color:#777;
+				font-size: 150px;
+				text-align: center !important;
+				display: block;
+			}
+		}
+		button{
+			height: 40px !important;
+		}
+	}
+
+	.ion-select.myCustomSelect{
+	  max-width: 100% !important;;
+	}
+
+
+	.item-select .input-label{
+		text-align: center;
+	}
+
+	.reson {
+	    width: 80%;
+	    margin: 0 auto;
+	    text-align: center;
+	}
+
+
+	
+
+}

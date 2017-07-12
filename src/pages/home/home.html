@@ -1,14 +1,77 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<i class="ion-android-person"></i>
+	</div>
 </ion-header>
+<!-- END -> Toolbar -->
+<ion-content id="main" class="main">
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<!-- Page Contents -->
+	<div class="page animated fadein">
+
+		<!-- START -> Refresh -->
+		<ion-refresher (ionRefresh)="doRefresh($event)">
+			<ion-refresher-content
+				pullingIcon="arrow-dropdown"
+				pullingText="Pull to refresh"
+				refreshingSpinner="circles"
+				refreshingText="Refreshing...">
+			</ion-refresher-content>
+		</ion-refresher>
+		<!-- END -> Refresh -->
+
+		<div class="social-share-author m-0 animated fadeinup delay-4">
+			<div class="notification-area">
+				<div class="media-top-object animated fadeinright z-depth-1 delay-2">
+					<i class="ion-ios-information-outline homepage-icon" ></i>
+					<div class="media-body">
+						<h5 class="news-title primary-text">
+							Please update your call cycle data by tomorrow.
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<!-- Targets -->
+		<div class="target-area">
+			<div class="title">
+				Your Target This Week
+			</div>
+			<div class="grap">
+				<div class="graph-progress" [ngStyle]="{'width': target_week}">{{target_week}}</div>
+			</div>
+		</div>
+		<!-- /Targets -->
+
+		<!-- Bins Area -->
+		<div class="bins-area">
+			<div class="title">
+				Total Bins Placed by Promotion
+			</div>
+
+			<div class="list" *ngFor="let promo of promos;">
+				<div class="list-row">
+					<div class="list-column"><strong>{{promo.promo_name}}</strong></div>
+					<div class="list-column-right">{{promo.total_bins +' out of ' + promo.overal_bins}} bins</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- /Bins Area -->
+
+		
+	</div>
+	<!-- END -> Page Contents -->
 </ion-content>
+
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="gotocalls();"><span class="white-text center-align">Start My Calls</span></button>
+</ion-footer>

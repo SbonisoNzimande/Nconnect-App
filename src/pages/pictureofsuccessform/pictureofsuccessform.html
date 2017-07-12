@@ -1,0 +1,60 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">{{category_name}}</h2>
+	</div>
+	<!-- END ->Store info -->
+
+	<button class="submit-btn button-full-width checkin-color block  check-buttons newbutton-color" (click)="view_pos_image();"><span class="white-text center-align" >View Picture of Success</span></button>
+
+	<div class="section-form">
+		<form novalidate #posForm="ngForm" (ngSubmit)="SubmitForm(form)" #posForm="ngForm">
+			<div class="center list-item" radio-group >
+				<p class="center form-label">Is the category in line with the picture of success?</p>
+				<p class="radio-inline right-radio">
+					<input name="category_inline" type="radio" id="yes" [(ngModel)]="category_inline" value="yes" class="radio radio-inline radio-blue"/>
+					<label for="yes">Yes</label>
+				</p>
+
+				<p class="radio-inline right-radio">
+					<input name="category_inline" type="radio" id="no" [(ngModel)]="category_inline" value="no" class="radio radio-inline radio-blue"/>
+					<label for="no">No</label>
+				</p>
+			</div>
+		</form>
+
+
+		<button ion-button (click)="chooseImage();" class="btn-large check-buttons take-photo animated fadeinright" block *ngIf="category_inline === 'yes'">
+			<span class="white-text top">Take a Photo / Library</span>
+			<span class="bottom">(You can take multiple)</span>
+		</button>
+
+
+		<button ion-button (click)="SavePictureOfSuccess();" class="btn-large check-buttons save-strike" block [disabled]="!category_inline">
+			<span class="white-text">Save</span>
+		</button>
+	</div>
+	
+</ion-content>
+
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->

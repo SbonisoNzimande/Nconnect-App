@@ -1,0 +1,76 @@
+START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+<ion-content>
+	<!-- Store info -->
+	<div class="section center">
+		<h5>You are in</h5>
+		<h2 class="heading">{{store_name}}</h2>
+		<h2 class="heading primary-text">Objectives</h2>
+	</div>
+	<!-- END ->Store info -->
+
+
+	<div class="section-form">
+		<form #form="ngForm" (ngSubmit)="SubmitForm(form)" novalidate>
+			<ion-item>	
+				<ion-label color="primary" floating>Core Activity</ion-label>
+				<ion-textarea [(ngModel)]="activity" ngControl="activity" name="activity"></ion-textarea>
+			</ion-item>
+			<ion-list>
+				<ion-item>
+					<ion-label color="primary">S</ion-label>
+					<ion-checkbox [(ngModel)]="smart.s" name="s"></ion-checkbox>
+				</ion-item>
+				<ion-item>
+					<ion-label color="primary">M</ion-label>
+					<ion-checkbox [(ngModel)]="smart.m"  name="m"></ion-checkbox>
+				</ion-item>
+				<ion-item>
+					<ion-label color="primary">A</ion-label>
+					<ion-checkbox [(ngModel)]="smart.a"  name="a"></ion-checkbox>
+				</ion-item>
+				<ion-item>
+					<ion-label color="primary">R</ion-label>
+					<ion-checkbox [(ngModel)]="smart.r"  name="r"></ion-checkbox>
+				</ion-item>
+				<ion-item>
+					<ion-label color="primary">T</ion-label>
+					<ion-checkbox [(ngModel)]="smart.t"  name="t"></ion-checkbox>
+				</ion-item>
+			</ion-list>
+			<ion-item>
+				<ion-label color="primary" floating>Strategy to Achieve SMART</ion-label>
+				<ion-select [(ngModel)]="strategy" name="strategy">
+					<ion-option value="Multiple Points of Interest">Multiple Points of Interaction</ion-option>
+					<ion-option value="Till Point">Till Point</ion-option>
+					<ion-option value="Shelf Relay">Shelf Relay</ion-option>
+					<ion-option value="Planogram">Planogram</ion-option>
+					<ion-option value="Competition">Competition</ion-option>
+					<ion-option  value="Other">Other</ion-option>
+				</ion-select>
+			</ion-item>
+			<br /><br />
+			<button ion-button type="submit"  class="waves-effect waves-light btn-large green lighten-1 save_obj" block>Save</button>
+
+			<!-- <button  style="width:100%">Save</button><br><br> -->
+			
+		</form>
+	</div>
+
+</ion-content>
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button -->

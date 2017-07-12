@@ -1,0 +1,17 @@
+page-addobjective {
+	.section-form{
+		padding: 10px 10px;
+	}
+
+	textarea {
+		height: 80px;
+	}
+
+	select:focus {
+	    outline: none;
+	}
+	button:focus {
+	    outline: none!important;
+	    background-color: transparent!important;
+	}
+}

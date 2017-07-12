@@ -1,0 +1,102 @@
+<!-- START -> Toolbar -->
+<ion-header id="toolbar" class="primary-color z-depth-1">
+	<div class="open-left" id="open-left" data-activates="slide-out-left">
+		<i class="ion-android-menu"></i>
+	</div>
+	<h1 class="title">nConnect</h1>
+	<div class="open-right" id="open-right" data-activates="slide-out">
+		<!-- <i class="ion-android-person"></i> -->
+	</div>
+</ion-header>
+<!-- END -> Toolbar -->
+
+
+
+<ion-content>
+
+	
+	<!-- Store info -->
+		<div class="section center">
+			<h5>You are in</h5>
+			<h2 class="heading">{{store_name}}</h2>
+		</div>
+	<!-- END ->Store info -->
+
+	
+
+	<!-- CheckIn button -->
+	<button *ngIf="!checkedin" class="submit-btn waves-effect waves-light button-full-width checkin-color block  animated bouncein delay-2 check-buttons" (click)="chekin();"><span class="white-text center-align" >Checkin & Start Call</span></button>
+
+	<button *ngIf="checkedin" class="submit-btn waves-effect waves-light button-full-width checkin-color block  animated bouncein delay-2 check-buttons"><span class="white-text center-align" >Checked Into Store</span></button>
+	<!-- END -> CheckIn button -->
+
+	<ul class="collection storecall">
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-1 obj-button waves-effect waves-light" (click)="gotoobjectives();">
+			<div class="notify-header">
+				<img class="avatar-obj" src="assets/images/objective.png" alt="">
+				<div class="notify-author">
+					<span>Objectives</span>
+				</div>
+				<span class="avatar-left"><i class="ion-chevron-right"></i></span>
+			</div>
+		</li>
+
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-2 str-button waves-effect waves-light" (click)="gotostrikerate();">
+			<div class="notify-header">
+				<img class="avatar-str" src="assets/images/strike_rates.png" alt="">
+				<div class="notify-author">
+					<span>Strike Rate</span>
+				</div>
+				<span class="avatar-left"><i class="ion-chevron-right"></i></span>
+			</div>
+		</li>
+
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-3 surv-button waves-effect waves-light" (click)="gotosurveys();">
+			<div class="notify-header">
+				<img class="avatar-surv" src="assets/images/surveys.png" alt="">
+				<div class="notify-author">
+					<span>Surveys To Complete</span>
+				</div>
+				<span class="avatar-left"><i class="ion-chevron-right"></i></span>
+			</div>
+		</li>
+
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-4 pic-button waves-effect waves-light"  (click)="gotopos();">
+			<div class="notify-header">
+				<img class="avatar-pic" src="assets/images/picos.png" alt="">
+				<div class="notify-author">
+					<span>Picture of Success</span>
+				</div>
+				<span class="avatar-left"><i class="ion-chevron-right"></i></span>
+			</div>
+		</li>
+
+		<li class="collection-item z-depth-1 dismissable animated fadeinup delay-5 randass-button waves-effect waves-light" (click)="gotorass();">
+			<div class="notify-header">
+				<img class="avatar-randass" src="assets/images/randass.png" alt="">
+				<div class="notify-author">
+					<span>Ranging & Assortment</span>
+				</div>
+				<span class="avatar-left"><i class="ion-chevron-right"></i></span>
+			</div>
+		</li>
+		
+		
+	</ul>
+
+
+	<!-- CheckOut button -->
+	<button *ngIf="location_id && !checkedout" class="submit-btn waves-effect waves-light button-full-width checkout-color block  animated bouncein delay-2 check-buttons" (click)="checkout();"><span class="white-text center-align" >Checkout & End Call <br /><strong>Has an order been placed?</strong></span></button>
+
+	<button *ngIf="location_id && checkedout" class="submit-btn waves-effect waves-light button-full-width checkout-color block  animated bouncein delay-2 check-buttons" ><span class="white-text center-align" >Checked Out</span></button>
+	<!-- END -> CheckOut button -->
+
+
+
+</ion-content>
+
+<!-- Footer Button  -->
+<ion-footer class="full bottom animated fadeinup delay-3">
+	<button class="submit-btn waves-effect waves-light button-full-width btn-large primary-color block  animated bouncein delay-2" (click)="goback();"><span class="white-text center-align">Back</span></button>
+</ion-footer>
+<!-- END -> Footer Button  -->
